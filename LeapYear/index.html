@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Ano bissexto</title>
+  <link rel="stylesheet" href="//code.jquery.com/qunit/qunit-1.19.0.css">
+  <script src="//code.jquery.com/qunit/qunit-1.19.0.js"></script>
+  <script src="leapyear.js"></script>
+  <script>
+    QUnit.test("Test_Year", function( assert ) {
+
+      function test_isLeapYear(then, expected, message) {
+        assert.equal(leapYear.Verify(then),expected, message);
+      }
+
+      test_isLeapYear(1600, true, '(1600 is LeapYear)');
+      test_isLeapYear(1732, true, '(1732 is LeapYear)');
+      test_isLeapYear(1888, true, '(1888 is LeapYear)');
+      test_isLeapYear(1944, true, '(1944 is LeapYear)');
+      test_isLeapYear(2008, true, '(2008 is LeapYear');
+      test_isLeapYear(1742, false, '(1742 not LeapYear)');
+      test_isLeapYear(1889, false, '(1889 not LeapYear)');
+      test_isLeapYear(1951, false, '(1951 not LeapYear)');
+      test_isLeapYear(2011, false, '(2011 not LeapYear)');
+
+    });
+
+  
+  </script>
+  
+</head>
+<body>
+  <h2>Ano bissexto</h2>
+  <p>A cada 4 anos, a diferença de horas entre o ano solar e o do calendário convencional completa cerca de 24 horas (mais exatamente: 23 horas, 15 minutos e 864 milésimos de segundo). Para compensar essa diferença e evitar um descompasso em relação às estações do ano, insere-se um dia extra no calendário e o mês de fevereiro fica com 29 dias. Essa correção é especialmente importante para atividades atreladas às estações, como a agricultura e até mesmo as festas religiosas.<br/>
+    Um determinado ano é bissexto se:<br/>
+    O ano for divisível por 4, mas não divisível por 100, exceto se ele for também divisível por 400.<br/>
+    Exemplos:<br/>
+    São bissextos por exemplo:<br/>
+    1600<br/>
+    1732<br/>
+    1888<br/>
+    1944<br/>
+    2008<br/>
+    Não são bissextos por exemplo:<br/>
+    1742<br/>
+    1889<br/>
+    1951<br/>
+    2011<br/>
+    Escreva uma função que determina se um determinado ano informado é bissexto ou não..</p>
+
+    <h2>Tests</h2>
+    <div id="qunit"></div>
+    <div id="qunit-fixture"></div>
+  </body>
+  </html>

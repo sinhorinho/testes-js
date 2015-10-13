@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>FizzBuzz</title>
+  <link rel="stylesheet" href="//code.jquery.com/qunit/qunit-1.19.0.css">
+  <style type="text/css">
+    ul li{list-style-type: none;
+          background-color: #dedede;
+          width: 150px;
+          padding: 5px;
+          margin: 2px;
+          display: inline-block;
+          border-radius: 5px;
+          }
+  </style>
+</head>
+<body>
+  <h2>FizzBuzz</h2>
+  <p>Neste problema, você deverá exibir uma lista de 1 a 100, um em cada linha, com as seguintes exceções:</br>
+    Números divisíveis por 3 deve aparecer como 'Fizz' ao invés do número;</br>
+    Números divisíveis por 5 devem aparecer como 'Buzz' ao invés do número;</br>
+    Números divisíveis por 3 e 5 devem aparecer como 'FizzBuzz' ao invés do número'.</p>
+
+    <h2>Tests</h2>
+    <div id="qunit"></div>
+    <div id="qunit-fixture"></div>
+
+    <h2>Result</h2>  
+    <div>
+      <ul id="number">
+      </ul>
+    </div>
+
+    <script src="//code.jquery.com/qunit/qunit-1.19.0.js"></script>
+    <script src="fizzbuzz.js"></script>
+    <script>
+      QUnit.test("Fizz", function( assert ) {
+
+        function test_Fizz(then, expected) {
+          assert.equal(fizzBuzz.Verify(then),expected);
+        }
+        test_Fizz(1, 1);
+        test_Fizz(2, 2);
+        test_Fizz(3, "Fizz");
+        test_Fizz(5, "Buzz");
+        test_Fizz(6, "Fizz");
+        test_Fizz(7, "7");
+        test_Fizz(8, 8);
+        test_Fizz(9, "Fizz");
+        test_Fizz(10, "Buzz");
+        test_Fizz(15, "FizzBuzz");
+      });
+    </script>
+    <script>
+      var ul = document.getElementById("number");
+      for (var i = 1; i <= 100; i++) {
+       ul.innerHTML += '<li><b>' + i + '</b> - ' + fizzBuzz.Verify(i) + '</li>';
+     };
+   </script>
+
+ </body>
+ </html>
